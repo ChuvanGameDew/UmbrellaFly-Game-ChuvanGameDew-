@@ -9,4 +9,4 @@ W opcji Information dodałem informacje o czcionkach i linki do nich.
 Dodałem również post-processing w samej grze, aby poprawić jej jakość.
 
 Wersja 0.3 Alpha Dodałem przycisk Ustawienia, a w ustawieniach gry dodałem funkcję zmiany języka.W grze
-dodałem wiele wysp do przechodzenia, a dodatkowo zrobiłem tak, że niektóre wyspy poruszają się w prawo i w lewo, aby utrudnić poziom gry.
+dodałem wiele wysp do przechodzenia, a dodatkowo zrobiłem tak, że niektóre wyspy poruszają się w prawo i w lewo, aby utrudnić poziom oraz dodalem jeścze nową funkcję do gry – przelatywanie nad wyspą. Po naciśnięciu przycisku postać leci w górę i omija wyspę. Funkcja będzie nazywać się „Super Boost”, występować w wybranych poziomach i mieć ograniczenu jak i zwykly boost.
