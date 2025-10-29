@@ -7,3 +7,6 @@
 Wersja 0.2 Alpha Dodałem menu do swojej gry. Na razie działają tylko przyciski Play, Exit oraz Information.
 W opcji Information dodałem informacje o czcionkach i linki do nich.
 Dodałem również post-processing w samej grze, aby poprawić jej jakość.
+
+Wersja 0.3 Alpha Dodałem przycisk Ustawienia, a w ustawieniach gry dodałem funkcję zmiany języka.W grze
+dodałem wiele wysp do przechodzenia, a dodatkowo zrobiłem tak, że niektóre wyspy poruszają się w prawo i w lewo, aby utrudnić poziom gry.
