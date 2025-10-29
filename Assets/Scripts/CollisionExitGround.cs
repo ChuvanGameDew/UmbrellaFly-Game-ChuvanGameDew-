@@ -1,12 +1,13 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CollisionExitGround : MonoBehaviour
 {
     private Rigidbody rb;
     private float jump = 9;
-    //public GameObject ZaborZad;
+    public GameObject[]  ZaborZad = new GameObject[3];
     
 
 
@@ -38,10 +39,18 @@ public class CollisionExitGround : MonoBehaviour
         if (other.gameObject.CompareTag("TriggerSkoku"))
         {
             PlayerChodzicz.ZmienneChodzenia.speedPlayer = 4;
-            
+
             PlayerChodzicz.ZmienneChodzenia.onletyt = true;
+
             //ZaborZad.SetActive(false);
+            SetActiveAll(ZaborZad, false);
+            
             StartCoroutine(SkokKarate());
+            
+            
+                 
+                //other.gameObject.CompareTag("zaborZad").SetActive(false);
+            
             
             
                 
@@ -54,7 +63,10 @@ public class CollisionExitGround : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             PlayerChodzicz.ZmienneChodzenia.onletyt = false;
+            //other.gameObject.CompareTag("zaborZad").SetActive(true);
             //ZaborZad.SetActive(true);
+            SetActiveAll(ZaborZad, true);
+            Physics.gravity = new Vector3(0, -10f, 0);
         }
     }
     
@@ -65,11 +77,19 @@ public class CollisionExitGround : MonoBehaviour
     }
     private IEnumerator SkokKarate()
     {
-        
-            yield return new WaitForSeconds(0.6f);
-            
-            IwanKarate();
-        
+
+        yield return new WaitForSeconds(0.6f);
+
+        IwanKarate();
+
     }
+    public void SetActiveAll(GameObject[] list, bool state)
+{
+    foreach (var obj in list)
+    {
+        obj.SetActive(state);
+    }
+}
+
     
 }

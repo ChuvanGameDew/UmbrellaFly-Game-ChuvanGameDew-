@@ -2,70 +2,78 @@ using UnityEngine;
 
 public class OnLetytGo : MonoBehaviour
 {
-    [Header("Jump Settings")]
-    [SerializeField] private float jumpMultiplier = 2500f;
+    private Rigidbody rb;
+    
+    private float JumpMonoznik = 2500;
+    private float JumpMonoznikW = 900;
+    private bool Akey = false;
+    private bool Dkey = false;
+    private bool Wkey = false;
+    public float startTime = 5f;
 
-    [Header("Particle Systems")]
+    // Particle system - teraz prywatne z możliwością ustawienia w inspektorze
     [SerializeField] private ParticleSystem particleSystemComponent1;
     [SerializeField] private ParticleSystem particleSystemComponent2;
 
-    private Rigidbody rb;
-
-    // Zmienne, które odpowiadają za kierunki
-    private enum MoveDirection { None, Left, Right }
-    private MoveDirection queuedDirection = MoveDirection.None;
-
     private void Awake()
     {
-        // Pobieramy komponent fizyki (Rigidbody)
         rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
+    {
+        if (PlayerChodzicz.ZmienneChodzenia.onletyt == true)
+        {
+            if (Akey == true)
+            {
+                //particleSystemComponent1.Simulate(startTime, withChildren: true, restart: true);
+                //particleSystemComponent1.Play();
+                //particleSystemComponent2.Play();
+                rb.AddForce(Vector3.back * JumpMonoznik, ForceMode.Acceleration);
+                Akey = false;
+            }
+            if (Dkey == true)
+            {
+                rb.AddForce(Vector3.forward * JumpMonoznik, ForceMode.Acceleration);
+                Dkey = false;
+            }
+            if(Wkey == true)
+            {
+                
+                //rb.mass = 5;
+                
+                rb.AddForce(Vector3.up * JumpMonoznikW, ForceMode.Acceleration);
+                Wkey = false;
+                 
+                //rb.linearDamping = 1f;
+                
+                
+            }
+        }
+        
     }
 
     private void Update()
     {
-        // Gdy nasz gracz zaczyna lecieć
-        if (!PlayerChodzicz.ZmienneChodzenia.onletyt) return;
+        if (Input.GetKeyDown(KeyCode.A) && PlayerChodzicz.ZmienneChodzenia.onletyt == true)
+        {
+            Akey = true;
+        }
+        if (Input.GetKeyDown(KeyCode.D) && PlayerChodzicz.ZmienneChodzenia.onletyt == true)
+        {
+            Dkey = true;
+        }
+        if (Input.GetKeyDown(KeyCode.W) && PlayerChodzicz.ZmienneChodzenia.onletyt == true)
+        {
+            Wkey = true;
+        }
 
-        // Sprawdza, czy kliknąłeś przyciski A lub D
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            queuedDirection = MoveDirection.Left;
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            queuedDirection = MoveDirection.Right;
-        }
     }
-
-    private void FixedUpdate()
-    {
-        // Ruch odbywa się tutaj, bo FixedUpdate działa razem z fizyką
-        if (!PlayerChodzicz.ZmienneChodzenia.onletyt) return;
-
-        Vector3 forceDirection = Vector3.zero;
-
-        // Wybieramy kierunek, w którym ma być dodana siła
-        switch (queuedDirection)
-        {
-            case MoveDirection.Left:
-                forceDirection = Vector3.back;
-                break;
-            case MoveDirection.Right:
-                forceDirection = Vector3.forward;
-                break;
+    void OnTriggerEnter(Collider other){
+            if (other.gameObject.CompareTag("22N"))
+            {
+                Physics.gravity = new Vector3(0, -22f, 0);
+                
+            }
         }
-
-        // Jeśli jakiś kierunek został zapisany, dodajemy siłę
-        if (forceDirection != Vector3.zero)
-        {
-            rb.AddForce(forceDirection * jumpMultiplier, ForceMode.Acceleration);
-
-            // Efekty cząsteczek można odpalić tutaj (zakomentowane na razie)
-            // particleSystemComponent1?.Play();
-            // particleSystemComponent2?.Play();
-        }
-
-        // Reset, żeby nie powtarzać ruchu w kolejnej klatce
-        queuedDirection = MoveDirection.None;
-    }
 }

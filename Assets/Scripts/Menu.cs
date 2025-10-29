@@ -6,6 +6,12 @@ public class Menu : MonoBehaviour
     public GameObject informationPanel;
     public GameObject mainMenu;
 
+    public GameObject Settings;
+    public class buttonselect
+    {
+        public static bool OnOROff = false;
+    }
+
     private SceneController sceneController;
     
 
@@ -23,6 +29,12 @@ public class Menu : MonoBehaviour
     public void OnExitPressed()
     {
         Application.Quit();
+    }
+    public void OnClickSettings()
+    {
+        Settings.SetActive(!Settings.activeSelf);
+        mainMenu.SetActive(!mainMenu.activeSelf);
+        buttonselect.OnOROff = !buttonselect.OnOROff;
     }
 
     public void OnToggleInformationPressed()

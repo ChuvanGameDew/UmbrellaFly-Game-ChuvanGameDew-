@@ -8,6 +8,7 @@ TagManager:
   - zaborZad
   - safe
   - TriggerSkoku
+  - 22N
   layers:
   - Default
   - TransparentFX
@@ -16,10 +17,10 @@ TagManager:
   - Water
   - UI
   - camera
-  - 
-  - 
-  - 
-  - 
+  - Buttonplay
+  - Buttonsettings
+  - Buttonexit
+  - post procesing
   - 
   - 
   - 
