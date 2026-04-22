@@ -10,38 +10,26 @@ public class Menu1 : MonoBehaviour
     [Header("UI Slider")]
     public Slider MenuMusicSlider;
 
-    // 🔥 WSPÓLNA WŁAŚCIWOŚĆ
-    public static float MenuMusicVolume { get; private set; } = 0.5f;
-
-    private const string SAVE_KEY = "MenuMusicVolume";
-
-    private void Awake()
-    {
-        // wczytanie zapisu
-        MenuMusicVolume = PlayerPrefs.GetFloat(SAVE_KEY, 0.5f);
-    }
-
     private void Start()
     {
-        MenuMusicSlider.value = MenuMusicVolume;
-        SetMixerVolume(MenuMusicVolume);
+        float defaultVolume = 0.5f; // 50% głośności
+
+        // Ustawienie slidera
+        if (MenuMusicSlider != null)
+            MenuMusicSlider.value = defaultVolume;
+
+        // Ustawienie głośności w mixerze
+        if (MenuMusic != null)
+            MenuMusic.SetFloat("MenuMusic", Mathf.Log10(defaultVolume) * 20);
     }
 
+    // Funkcja wywoływana przez slider
     public void SetGameMusic(float value)
     {
-        MenuMusicVolume = value;
-
-        PlayerPrefs.SetFloat(SAVE_KEY, value);
-        PlayerPrefs.Save();
-
-        SetMixerVolume(value);
-    }
-
-    private void SetMixerVolume(float value)
-    {
-        if (value <= 0.0001f)
-            MenuMusic.SetFloat("MenuMusic", -80f);
-        else
+        if (MenuMusic != null)
             MenuMusic.SetFloat("MenuMusic", Mathf.Log10(value) * 20);
     }
 }
+
+
+//GameMusicSettings

@@ -10,42 +10,26 @@ public class GameMusicSettings : MonoBehaviour
     [Header("UI Slider")]
     public Slider GameMusicSlider;
 
-    // 🔥 WSPÓLNA WARTOŚĆ (do użycia w innych skryptach)
-    public static float GameMusicVolume { get; private set; } = 0.5f;
-
-    private void Awake()
-    {
-        // 🔹 wczytanie zapisu (jeśli nie ma → 0.5)
-        GameMusicVolume = PlayerPrefs.GetFloat("GameMusicVolume", 0.5f);
-    }
-
     private void Start()
     {
-        // ustawienie slidera
-        if (GameMusicSlider != null)
-            GameMusicSlider.value = GameMusicVolume;
+        float defaultVolume = 0.5f; // 50% głośności
 
-        // ustawienie głośności w mixerze
-        SetMixerVolume(GameMusicVolume);
+        // Ustawienie slidera
+        if (GameMusicSlider != null)
+            GameMusicSlider.value = defaultVolume;
+
+        // Ustawienie głośności w mixerze
+        if (GameMusic != null)
+            GameMusic.SetFloat("GameMusic", Mathf.Log10(defaultVolume) * 20);
     }
 
-    // wywoływane przez slider
+    // Funkcja wywoływana przez slider
     public void SetGameMusic(float value)
     {
-        GameMusicVolume = value;
-
-        // zapis do PlayerPrefs
-        PlayerPrefs.SetFloat("GameMusicVolume", value);
-        PlayerPrefs.Save();
-
-        SetMixerVolume(value);
-    }
-
-    private void SetMixerVolume(float value)
-    {
-        if (value <= 0.0001f)
-            GameMusic.SetFloat("GameMusic", -80f);
-        else
+        if (GameMusic != null)
             GameMusic.SetFloat("GameMusic", Mathf.Log10(value) * 20);
     }
 }
+
+
+//GameMusicSettings

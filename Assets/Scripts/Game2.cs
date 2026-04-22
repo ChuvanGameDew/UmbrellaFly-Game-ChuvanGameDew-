@@ -10,37 +10,23 @@ public class Game2 : MonoBehaviour
     [Header("UI Slider")]
     public Slider GameSoundSlider;
 
-    // 🔥 WSPÓLNA WARTOŚĆ (do użycia w innych skryptach)
-    public static float GameSoundVolume { get; private set; } = 0.5f;
-
-    private void Awake()
-    {
-        // 🔹 ładowanie zapisu (jeśli nie ma → 0.5)
-        GameSoundVolume = PlayerPrefs.GetFloat("GameSoundVolume", 0.5f);
-    }
-
     private void Start()
     {
-        GameSoundSlider.value = GameSoundVolume;
-        SetMixerVolume(GameSoundVolume);
+        float defaultVolume = 0.5f; // 50% głośności
+
+        // Ustawienie slidera
+        if (GameSoundSlider != null)
+            GameSoundSlider.value = defaultVolume;
+
+        // Ustawienie głośności w mixerze
+        if (GameSound != null)
+            GameSound.SetFloat("GameSound", Mathf.Log10(defaultVolume) * 20);
     }
 
-    // Wywoływane przez slider
+    // Funkcja wywoływana przez slider
     public void SetGameMusic(float value)
     {
-        GameSoundVolume = value;
-
-        PlayerPrefs.SetFloat("GameSoundVolume", value);
-        PlayerPrefs.Save();
-
-        SetMixerVolume(value);
-    }
-
-    private void SetMixerVolume(float value)
-    {
-        if (value <= 0.0001f)
-            GameSound.SetFloat("GameSound", -80f);
-        else
+        if (GameSound != null)
             GameSound.SetFloat("GameSound", Mathf.Log10(value) * 20);
     }
 }

@@ -104,11 +104,7 @@ public class ImageBoost : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Win"))
         {
-            Invoke("LoadSceneWin",1f);
+            SceneManager.LoadScene(4);
         }
-    }
-    public void LoadSceneWin()
-    {
-        SceneManager.LoadScene(4);
     }
 }

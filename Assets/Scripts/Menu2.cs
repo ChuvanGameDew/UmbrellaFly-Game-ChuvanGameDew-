@@ -10,37 +10,26 @@ public class Menu2 : MonoBehaviour
     [Header("UI Slider")]
     public Slider MenuSoundSlider;
 
-    // 🔥 WSPÓLNA WARTOŚĆ (do użycia w innych skryptach)
-    public static float MenuSoundVolume { get; private set; } = 0.5f;
-
-    private void Awake()
-    {
-        // 🔹 ładowanie zapisu (jeśli nie ma → 0.5)
-        MenuSoundVolume = PlayerPrefs.GetFloat("MenuSoundVolume", 0.5f);
-    }
-
     private void Start()
     {
-        MenuSoundSlider.value = MenuSoundVolume;
-        SetMixerVolume(MenuSoundVolume);
+        float defaultVolume = 0.5f; // 50% głośności
+
+        // Ustawienie slidera
+        if (MenuSoundSlider != null)
+            MenuSoundSlider.value = defaultVolume;
+
+        // Ustawienie głośności w mixerze
+        if (MenuSound != null)
+            MenuSound.SetFloat("MenuSound", Mathf.Log10(defaultVolume) * 20);
     }
 
-    // Wywoływane przez slider
+    // Funkcja wywoływana przez slider
     public void SetGameMusic(float value)
     {
-        MenuSoundVolume = value;
-
-        PlayerPrefs.SetFloat("MenuSoundVolume", value);
-        PlayerPrefs.Save();
-
-        SetMixerVolume(value);
-    }
-
-    private void SetMixerVolume(float value)
-    {
-        if (value <= 0.0001f)
-            MenuSound.SetFloat("MenuSound", -80f);
-        else
+        if (MenuSound != null)
             MenuSound.SetFloat("MenuSound", Mathf.Log10(value) * 20);
     }
 }
+
+
+//GameMusicSettings
