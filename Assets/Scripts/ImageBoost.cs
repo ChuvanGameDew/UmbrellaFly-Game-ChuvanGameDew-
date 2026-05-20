@@ -102,6 +102,10 @@ public class ImageBoost : MonoBehaviour
         {
             Mapkol.LicznikMap = 2;
         }
+        if (other.gameObject.CompareTag("Mapa3"))
+        {
+            Mapkol.LicznikMap = 3;
+        }
         if (other.gameObject.CompareTag("Win"))
         {
             SceneManager.LoadScene(4);

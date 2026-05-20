@@ -77,6 +77,7 @@ TagManager:
   - Mapa1
   - Mapa2
   - Win
+  - Mapa3
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,219 @@
+{
+  "items": [
+    {
+      "key": "menu_play",
+      "en": "Play",
+      "pl": "Graj",
+      "es": "Jugar",
+      "ru": "Играть",
+      "de": "Spielen",
+      "fr": "Jouer",
+      "pt": "Jogar",
+      "uk": "Грати"
+    },
+
+    {
+      "key": "menu_settings",
+      "en": "Settings",
+      "pl": "Ustawienia",
+      "es": "Ajustes",
+      "ru": "Настройки",
+      "de": "Einstellungen",
+      "fr": "Paramètres",
+      "pt": "Configurações",
+      "uk": "Налаштування"
+    },
+
+    {
+      "key": "menu_exit",
+      "en": "Exit",
+      "pl": "Wyjście",
+      "es": "Salir",
+      "ru": "Выход",
+      "de": "Beenden",
+      "fr": "Quitter",
+      "pt": "Sair",
+      "uk": "Вихід"
+    },
+
+    {
+      "key": "settings_game",
+      "en": "Game",
+      "pl": "Gra",
+      "es": "Juego",
+      "ru": "Игра",
+      "de": "Spiel",
+      "fr": "Jeu",
+      "pt": "Jogo",
+      "uk": "Гра"
+    },
+
+    {
+      "key": "settings_graphics",
+      "en": "Graphics",
+      "pl": "Grafika",
+      "es": "Gráficos",
+      "ru": "Графика",
+      "de": "Grafik",
+      "fr": "Graphismes",
+      "pt": "Gráficos",
+      "uk": "Графіка"
+    },
+
+    {
+      "key": "settings_volume",
+      "en": "Volume",
+      "pl": "Głośność",
+      "es": "Volumen",
+      "ru": "Громкость",
+      "de": "Lautstärke",
+      "fr": "Volume",
+      "pt": "Volume",
+      "uk": "Гучність"
+    },
+
+    {
+      "key": "settings_controls",
+      "en": "Controls",
+      "pl": "Sterowanie",
+      "es": "Controles",
+      "ru": "Управление",
+      "de": "Steuerung",
+      "fr": "Commandes",
+      "pt": "Controles",
+      "uk": "Керування"
+    },
+
+    {
+      "key": "settings_language",
+      "en": "Language",
+      "pl": "Język",
+      "es": "Idioma",
+      "ru": "Язык",
+      "de": "Sprache",
+      "fr": "Langue",
+      "pt": "Idioma",
+      "uk": "Мова"
+    },
+
+    {
+      "key": "controls_forward",
+      "en": "Move Forward",
+      "pl": "Ruch do przodu",
+      "es": "Mover hacia adelante",
+      "ru": "Движение вперед",
+      "de": "Vorwärts bewegen",
+      "fr": "Avancer",
+      "pt": "Mover para frente",
+      "uk": "Рух вперед"
+    },
+
+    {
+      "key": "controls_left_boost",
+      "en": "Move left; activates boost during flight",
+      "pl": "Ruch w lewo; podczas lotu aktywuje boost",
+      "es": "Mover a la izquierda; activa boost durante el vuelo",
+      "ru": "Движение влево; во время полета активирует буст",
+      "de": "Nach links bewegen; aktiviert Boost während des Fluges",
+      "fr": "Déplacement à gauche; active le boost en vol",
+      "pt": "Mover para esquerda; ativa boost durante o voo",
+      "uk": "Рух вліво; під час польоту активує буст"
+    },
+
+    {
+      "key": "controls_backward",
+      "en": "Move Backward",
+      "pl": "Ruch do tyłu",
+      "es": "Mover hacia atrás",
+      "ru": "Движение назад",
+      "de": "Rückwärts bewegen",
+      "fr": "Reculer",
+      "pt": "Mover para trás",
+      "uk": "Рух назад"
+    },
+
+    {
+      "key": "controls_right_boost",
+      "en": "Move right; activates boost during flight",
+      "pl": "Ruch w prawo; podczas lotu aktywuje boost",
+      "es": "Mover a la derecha; activa boost durante el vuelo",
+      "ru": "Движение вправо; во время полета активирует буст",
+      "de": "Nach rechts bewegen; aktiviert Boost während des Fluges",
+      "fr": "Déplacement à droite; active le boost en vol",
+      "pt": "Mover para direita; ativa boost durante o voo",
+      "uk": "Рух вправо; під час польоту активує буст"
+    },
+
+    {
+      "key": "controls_pause",
+      "en": "Pause Game",
+      "pl": "Wstrzymanie gry",
+      "es": "Pausar juego",
+      "ru": "Пауза игры",
+      "de": "Spiel pausieren",
+      "fr": "Pause du jeu",
+      "pt": "Pausar jogo",
+      "uk": "Пауза гри"
+    },
+
+    {
+      "key": "controls_super_boost",
+      "en": "Activates super boost during flight",
+      "pl": "Aktywuje super boost podczas lotu",
+      "es": "Activa super boost durante el vuelo",
+      "ru": "Активирует супер буст во время полета",
+      "de": "Aktiviert Super-Boost während des Fluges",
+      "fr": "Active le super boost pendant le vol",
+      "pt": "Ativa super boost durante o voo",
+      "uk": "Активує супер буст під час польоту"
+    },
+
+    {
+      "key": "menu_restart",
+      "en": "Restart",
+      "pl": "Restart",
+      "es": "Reiniciar",
+      "ru": "Рестарт",
+      "de": "Neustart",
+      "fr": "Redémarrer",
+      "pt": "Reiniciar",
+      "uk": "Перезапуск"
+    },
+
+    {
+      "key": "menu_menu",
+      "en": "Menu",
+      "pl": "Menu",
+      "es": "Menú",
+      "ru": "Меню",
+      "de": "Menü",
+      "fr": "Menu",
+      "pt": "Menu",
+      "uk": "Меню"
+    },
+
+    {
+      "key": "settings_sound",
+      "en": "Sound",
+      "pl": "Dźwięk",
+      "es": "Sonido",
+      "ru": "Звук",
+      "de": "Sound",
+      "fr": "Son",
+      "pt": "Som",
+      "uk": "Звук"
+    },
+
+    {
+      "key": "settings_music",
+      "en": "Music",
+      "pl": "Muzyka",
+      "es": "Música",
+      "ru": "Музыка",
+      "de": "Musik",
+      "fr": "Musique",
+      "pt": "Música",
+      "uk": "Музика"
+    }
+  ]
+}

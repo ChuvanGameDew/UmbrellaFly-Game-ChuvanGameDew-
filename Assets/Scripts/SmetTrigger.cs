@@ -261,6 +261,121 @@ public class SmetTrigger : MonoBehaviour
             {  
                 IloscBoostow.IloscBoostu = 2;
             }
+            if (other.gameObject.CompareTag("41 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+            }
+            if (other.gameObject.CompareTag("42 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                IloscBoostow.IloscSuperBoostu = 1;
+            }
+            if (other.gameObject.CompareTag("43 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                
+            }
+            if (other.gameObject.CompareTag("44 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                
+            }
+            if (other.gameObject.CompareTag("45 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                
+            }
+            if (other.gameObject.CompareTag("46 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("47 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("48 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 4;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("49 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("50 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("51 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("52 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("53 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 4;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("54 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("55 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("56 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 4;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("57 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("58 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("59 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 4;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            if (other.gameObject.CompareTag("60 Platform"))
+            {  
+                IloscBoostow.IloscBoostu = 2;
+                IloscBoostow.IloscSuperBoostu = 1;
+                
+            }
+            
 
 
         //

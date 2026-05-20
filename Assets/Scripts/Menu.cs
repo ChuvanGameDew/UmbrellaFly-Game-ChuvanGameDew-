@@ -8,6 +8,13 @@ public class Menu : MonoBehaviour
     public GameObject WyborMapy;
 
     public GameObject Settings;
+
+    public GameObject GameButEkr;
+
+    public GameObject VolumeButEkr;
+
+    public GameObject ControlsButEkr;
+
     public AudioSource buttondown;
     public static  int MapaNr = 0 ;
     public class buttonselect
@@ -45,6 +52,10 @@ public class Menu : MonoBehaviour
     {
         Menu.MapaNr = 2;
     }
+    public void Mapa3()
+    {
+        Menu.MapaNr = 3;
+    }
         public void PlayMapa()
     {
         sound();
@@ -57,6 +68,12 @@ public class Menu : MonoBehaviour
         else if(Menu.MapaNr == 2)
         {
         SceneManager.LoadScene(3);
+        SmetTrigger.IloscBoostow.restart = true;
+        sound();  
+        }
+        else if(Menu.MapaNr == 3)
+        {
+        SceneManager.LoadScene(5);
         SmetTrigger.IloscBoostow.restart = true;
         sound();  
         }
@@ -75,6 +92,9 @@ public class Menu : MonoBehaviour
         mainMenu.SetActive(!mainMenu.activeSelf);
         buttonselect.OnOROff = !buttonselect.OnOROff;
         sound();
+        GameButEkr.SetActive(true);
+        ControlsButEkr.SetActive(false);
+        VolumeButEkr.SetActive(false);
         
     }
 
@@ -85,17 +105,7 @@ public class Menu : MonoBehaviour
         sound();
     }
 
-    public void OnLink1Pressed()
-    {
-         Application.OpenURL("https://fonts.google.com/specimen/Irish+Grover");
-         sound();
-    }
 
-    public void OnLink2Pressed()
-    {
-         Application.OpenURL("https://fonts.google.com/specimen/Itim");
-         sound();
-    }
     //screen lose
     public void OnMenuButtonPressed()
     {
@@ -117,6 +127,12 @@ public class Menu : MonoBehaviour
         SmetTrigger.IloscBoostow.restart = true;
         sound();
         }
+        else if(ImageBoost.Mapkol.LicznikMap == 3)
+        {
+        SceneManager.LoadScene(5);
+        SmetTrigger.IloscBoostow.restart = true;
+        sound();
+        }
         
     }
     public void sound()
@@ -133,5 +149,31 @@ public class Menu : MonoBehaviour
     public void exitSettingsMAPA()
     {
          Settings.SetActive(false);
+    }
+    public void Game()
+    {
+        if (GameButEkr != null && VolumeButEkr != null && ControlsButEkr != null) {
+        GameButEkr.SetActive(true);
+        ControlsButEkr.SetActive(false);
+        VolumeButEkr.SetActive(false);
+        }
+    }
+    public void Volume()
+    {
+        if (GameButEkr != null && VolumeButEkr != null && ControlsButEkr != null) {
+        VolumeButEkr.SetActive(true);
+        GameButEkr.SetActive(false);
+        ControlsButEkr.SetActive(false);
+        }
+
+    }
+    public void Controls()
+    {
+        if (GameButEkr != null && VolumeButEkr != null && ControlsButEkr != null) {
+        ControlsButEkr.SetActive(true);
+        VolumeButEkr.SetActive(false);
+        GameButEkr.SetActive(false);
+        }
+
     }
 }

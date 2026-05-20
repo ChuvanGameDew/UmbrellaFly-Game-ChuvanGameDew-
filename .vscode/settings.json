@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "PrawieGotowa.sln"
+    "dotnet.defaultSolution": "PtawieGotowe2.sln"
 }
